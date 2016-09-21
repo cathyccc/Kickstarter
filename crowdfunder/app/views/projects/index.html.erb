@@ -1,2 +1,8 @@
 <h1>Projects#index</h1>
 <p>Find me in app/views/projects/index.html.erb</p>
+
+<% @projects.each do |p| %>
+<h2><%= p.title %></h2>
+<p><%= p.description %></p>
+<p><%= image_tag p.image %></p>
+<% end %>

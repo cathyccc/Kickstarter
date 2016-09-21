@@ -13,8 +13,9 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
+    puts project_params
       if @project.save
-        redirect_to project_url
+        redirect_to @project
       else
         render :new
     end
@@ -22,7 +23,8 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-    @rewards = Reward.find(params[:project_id])
+    @rewards = @project.rewards.all
+    # @rewards = Reward.find(params[:project_id])
   end
 
   def destroy
