@@ -2,6 +2,7 @@
 <p>Find me in app/views/projects/show.html.erb</p>
 
 <% @rewards.each do |reward| %>
-<h2><%= reward.title %></h2>
+<h2><%= link_to reward.title, project_rewards_users_path(@project), :method => :post %></h2>
+
 <p><%= reward.description %></p>
 <% end %>
