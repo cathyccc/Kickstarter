@@ -1,0 +1,3 @@
+class RewardsUser < ApplicationRecord
+
+end

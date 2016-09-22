@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+
   def index
     @projects = Project.all
 
@@ -7,11 +8,16 @@ class ProjectsController < ApplicationController
   # my_project.rewards
 
   def new
+    if current_user
     @project = Project.new
     @reward = Reward.new
+  else
+    redirect_to projects_path
+  end
   end
 
   def create
+    user_signed_in?
     @project = Project.new(project_params)
     puts project_params
       if @project.save
@@ -28,16 +34,19 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
+    current_user
     @project = Project.find(params[:id])
     @project.destroy
     redirect_to projects_path
   end
 
   def edit
+    current_user
     @project = Project.find(params[:id])
   end
 
   def update
+    current_user
     @project = Project.find(params[:id])
       if @project.update_attributes(project_params)
         redirect_to projects_path

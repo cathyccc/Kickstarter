@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   resources :projects do
     resources :rewards
+    resources :rewards_users
   end
+  resources :users, only: [:show]
 
-  resource :users
 
   root "projects#index"
 
