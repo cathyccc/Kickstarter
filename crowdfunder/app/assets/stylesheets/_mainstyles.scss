@@ -1,3 +1,77 @@
-body {
+html {
   font-family: helvetica;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  height: 25px;
+  background-color: black;
+}
+
+.header-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.main-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.user-tools li {
+  list-style: none;
+  display: inline;
+  line-height: 25px;
+  font-size: 10px;
+}
+
+.user-tools li a {
+  text-decoration: none;
+  color: white;
+  padding-right: 10px;
+}
+
+.logo {
+  width: 250px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+main {
+  overflow: hidden;
+}
+
+
+.project-main {
+  max-width: 450px;
+  float: left;
+}
+
+.rewards {
+  max-width: 250px;
+  float: left;
+  margin-top: 25px;
+  margin-left: 50px;
+  padding: 0 20px;
+  background: #f4fef4;
+  border-radius: 10px;
+}
+
+.show-image {
+  width: 400px;
+}
+
+.reward-name {
+  font-size: 18px;
+}
+.reward-name a {
+  text-decoration: none;
+  color: black;
+
 }
