@@ -1,8 +1,10 @@
 <h1><%= @project.title %></h1>
-<p>Find me in app/views/projects/show.html.erb</p>
+<p><%= @project.description %></p>
+<%= image_tag @project.image %>
+<h3>$<%= @project.goal %>.00</h3>
 
 <% @rewards.each do |reward| %>
 <h2><%= link_to reward.title, project_rewards_users_path(@project), :method => :post %></h2>
-
 <p><%= reward.description %></p>
+<h4>$<%= reward.pledge %>.00</h4>
 <% end %>
