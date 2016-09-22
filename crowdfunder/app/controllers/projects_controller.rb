@@ -19,6 +19,7 @@ class ProjectsController < ApplicationController
   def create
     user_signed_in?
     @project = Project.new(project_params)
+    @project.owner = current_user
     puts project_params
       if @project.save
         redirect_to @project
