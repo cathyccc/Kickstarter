@@ -19,6 +19,9 @@
         <li>
           <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
         </li>
+        <li>
+          <%= link_to "Create a project", new_project_path %>
+        </li>
         <% else %>
         <li>
           <%= link_to('Login', new_user_session_path)  %>
@@ -27,9 +30,6 @@
           <%= link_to('Sign Up', new_user_registration_path)  %>
         </li>
         <% end %>
-        <li>
-          <%= link_to "Create a project", new_project_path %>
-        </li>
       </div>
     </div>
     </header>
