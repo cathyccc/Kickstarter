@@ -6,42 +6,39 @@
   </head>
   <body>
     <h1 class="user-header"> Welcome back!</h1>
-    <p class="user-information"><%= @user.email %></p>
-
-
-    <h1 class="backed-project-header product-text"> Backed projects </h1>
-    <div class="backed-projects">
-      <% if @user.rewards.empty? %>
+    <p class="user-information"><strong>Account name: </strong><%= @user.email %></p>
+    <p class="user-information"><strong>Last logged in: </strong><%= @user.last_sign_in_at %></p>
+    <h1 class="backed-project-header product-text">Projects You Have Backed</h1>
+    <div class="list-projects">
+    <% if @user.rewards.empty? %>
       <p class="product-text">You don't have any backed projects</p>
       <p class="product-text"><%= link_to "Explore projects to back!", projects_path %></p>
     <% else %>
-    <% @user.rewards.each do |reward| %>
-    <div class="project-container">
-      <h3 class="backed-project-reward product-text"><%= reward.project.title %></h3>
-      <div class="image-container">
-        <%= image_tag reward.project.image, class: "product-image"%>
-      </div>
-      <h3 class="product-text">Amount Pledged: $<%= reward.pledge %>.00</h3>
-
+      <% @user.rewards.each do |reward| %>
+      <!-- <div class="project-container"> -->
+      <ul class="list-items backed-projects">
+        <li class="backed-project-reward product-text"><%= reward.project.title %></li>
+        <li class="image-container"><%= image_tag reward.project.image, class: "product-image"%></li>
+        <li class="product-text">Amount Pledged: $<%= reward.pledge %>.00</li>
+        <li class="product-text">Time left: <%= ((((reward.project.created_at.to_time + 30.days) - Time.now)/3600)/24).to_i %> days</li>
+      </ul>
+      <% end %>
+    <% end %>
     </div>
-    <% end %>
-    <% end %>
-</div>
 
     <h1 class="product-text">My Projects</h1>
     <% if @user.owned_projects.empty? %>
-    <p class="product-text">You don't have any projects</p>
-    <p class="product-text"><%= link_to "Create a project here", new_project_path %></p>
-<% else %>
-<% @user.owned_projects.each do |project| %>
-<div class="project-container">
-  <h3 class="backed-project-reward product-text"><%= project.title %></h3>
-  <div class="image-container">
-    <%= image_tag project.image, class: "product-image"%>
-  </div>
-  <h3 class="product-text">Amount Raised: $<%= project.all_pledges_total %>.00</h3>
-</div>
-<% end %>
-<% end %>
+      <p class="product-text">You don't have any projects</p>
+      <p class="product-text"><%= link_to "Create a project here", new_project_path %></p>
+    <% else %>
+      <% @user.owned_projects.each do |project| %>
+      <ul class="list-items">
+        <li class="backed-project-reward product-text"><%= project.title %></li>
+        <li class="image-container"><%= image_tag project.image, class: "product-image"%></li>
+        <li class="product-text">Amount Raised: $<%= project.all_pledges_total %>.00</li>
+        <li class="product-text">Time left: <%= ((((project.created_at.to_time + 30.days) - Time.now)/3600)/24).to_i %> days</li>
+      </ul>
+      <% end %>
+    <% end %>
   </body>
 </html>
