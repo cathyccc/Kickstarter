@@ -3,7 +3,7 @@
   <head>
     <title>Crowdfunder</title>
     <%= csrf_meta_tags %>
-
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -11,8 +11,9 @@
   <body>
     <header>
       <div class="header-content">
-      <% if user_signed_in? %>
       <div class="user-tools">
+      <% if user_signed_in? %>
+
         <li>
           <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
         </li>

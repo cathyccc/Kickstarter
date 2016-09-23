@@ -2,7 +2,6 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.all
-
   end
 
   # my_project.rewards
@@ -19,6 +18,7 @@ class ProjectsController < ApplicationController
   def create
     user_signed_in?
     @project = Project.new(project_params)
+    @project.owner = current_user
     puts project_params
       if @project.save
         redirect_to @project
@@ -58,7 +58,7 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:title, :description, :goal, :image, rewards_attributes: [:title, :description, :pledge])
+    params.require(:project).permit(:title, :description, :goal, :image, :end_date, rewards_attributes: [:title, :description, :pledge])
   end
 
   def load_project
