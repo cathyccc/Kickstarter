@@ -1,7 +1,7 @@
 
 <container class = "body_container">
   <div class = "featured">
-    <div class = "header_img"><%= image_tag Project.last.image %></div>
+    <div class = "header_img"><%= link_to image_tag(Project.last.image), project_path(Project.last)%></div>
     <div class="project_of_day">Project of the Day</div>
   </div>
 
@@ -12,7 +12,7 @@
       <ul class = "list-items">
         <% if p == @projects.last %>
         <% else %>
-          <li class = "list-image"><%= image_tag p.image %></li>
+          <li class = "list-image"><%= link_to image_tag(p.image), project_path(p) %></li>
           <div class = "list-description">
             <li class = "title"><%= p.title %></li>
             <li class = "description"><%= p.description %></li>
