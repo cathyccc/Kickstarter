@@ -20,6 +20,14 @@
   text-align: center;
 }
 
+#log-in-title{
+  text-align: center;
+  margin: 10px;
+}
+
+.login-actions{
+  text-align: center;
+}
 
 .project-container {
   display: inline-block;
@@ -28,4 +36,9 @@
 
 .backed-projects {
   background-color: #F4FEF4;
+}
+
+.login-field{
+  text-align: center;
+  padding: 10px;
 }
