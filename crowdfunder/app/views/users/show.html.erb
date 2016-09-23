@@ -11,28 +11,37 @@
 <!--  If user doesn't have any backed project suggest and link to index-->
     <h1 class="backed-project-header product-text"> Backed projects </h1>
     <div class="backed-projects">
+      <% if @user.rewards.empty? %>
+      <p class="product-text">You don't have any backed projects</p>
+      <p class="product-text"><%= link_to "Explore projects to back!", projects_path %></p>
+    <% else %>
     <% @user.rewards.each do |reward| %>
     <div class="project-container">
-    <h3 class="backed-project-reward product-text"><%= reward.project.title %></h3>
-    <div class="image-container">
-    <%= image_tag reward.project.image, class: "product-image"%>
-  </div>
-    <h3 class="product-text">Amount Pledged: $<%= reward.pledge %>.00</h3>
+      <h3 class="backed-project-reward product-text"><%= reward.project.title %></h3>
+      <div class="image-container">
+        <%= image_tag reward.project.image, class: "product-image"%>
+      </div>
+      <h3 class="product-text">Amount Pledged: $<%= reward.pledge %>.00</h3>
 
-  </div>
+    </div>
+    <% end %>
     <% end %>
 </div>
 <!-- If my project exists run this else suggest a user create one-->
     <h1 class="product-text">My Projects</h1>
-    <% @user.owned_projects.each do |project| %>
-    <div class="project-container">
-    <h3 class="backed-project-reward product-text"><%= project.title %></h3>
-    <div class="image-container">
+    <% if @user.owned_projects.empty? %>
+    <p class="product-text">You don't have any projects</p>
+    <p class="product-text"><%= link_to "Create a project here", new_project_path %></p>
+<% else %>
+<% @user.owned_projects.each do |project| %>
+<div class="project-container">
+  <h3 class="backed-project-reward product-text"><%= project.title %></h3>
+  <div class="image-container">
     <%= image_tag project.image, class: "product-image"%>
   </div>
-    <h3 class="product-text">Amount Raised: $<%= project.all_pledges_total %>.00</h3>
+  <h3 class="product-text">Amount Raised: $<%= project.all_pledges_total %>.00</h3>
 </div>
-    <% end %>
-
+<% end %>
+<% end %>
   </body>
 </html>
