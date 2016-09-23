@@ -45,9 +45,11 @@
   list-style: none;
   overflow: hidden;
   width: 32%;
-  height: 300px;
+  vertical-align: top;
   display: inline-block;
   padding: 0px;
+  border-radius: 20px;
+  border: 2px solid #d0cccc;
 }
 
 .header2{
@@ -60,13 +62,6 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-.list-image {
-  margin: 0;
-  width: 100%;
-  height: auto;
-  position: absolute;
-}
-
 .list-description{
   display: block;
 }
@@ -77,4 +72,15 @@
 
 .list-image img{
   height: 305px;
+}
+
+.title{
+  font-weight: bold;
+  line-height: 33px;
+}
+
+.list-description{
+  padding: 7px 17px 17px 17px;
+  line-height: 1.2em;
+  text-align: left;
 }
