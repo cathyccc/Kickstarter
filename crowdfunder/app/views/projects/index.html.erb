@@ -4,13 +4,18 @@
     <div class="project_of_day">Project of the Day</div>
   </div>
 
+  <div class = "header2">Projects We Love</div>
+
   <div class = "list-projects">
     <% @projects.each do |p| %>
       <ul class = "list-items">
         <% if p == @projects.last %>
         <% else %>
-          <%= p.title %>
           <li class = "list-image"><%= image_tag p.image %></li>
+          <div class = "list-description">
+            <li><%= p.title %></li>
+            <li><%= p.description %></li>
+          </div>
         <% end %>
       </ul>
     <% end %>
