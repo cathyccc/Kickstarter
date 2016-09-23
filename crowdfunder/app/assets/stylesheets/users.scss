@@ -9,12 +9,12 @@
   background-color: #F4FEF4;
 }
 
-#log-in-title{
+.session-title{
   text-align: center;
   margin: 10px;
 }
 
-.login-actions{
+.actions{
   text-align: center;
 }
 
@@ -33,7 +33,7 @@
   font-size: 12px;
 }
 
-.login-field{
+.field{
   text-align: center;
   padding: 10px;
 }
@@ -41,4 +41,10 @@
 .time-left{
   font-weight: bold;
   padding-top: 10px;
+}
+
+.links{
+  text-align: center;
+  padding-top: 30px;
+  line-height: 25px;
 }

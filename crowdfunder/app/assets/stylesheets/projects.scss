@@ -71,6 +71,7 @@
 
 .list-image img{
   height: 305px;
+  position: relative;
 }
 
 .title{
@@ -84,4 +85,13 @@
   line-height: 1.2em;
   text-align: left;
   font-size: 12px;
+}
+
+.project-field{
+  padding: 8px 0px;
+}
+
+.project-actions{
+  padding-top: 10px;
+  margin-bottom: 50px;
 }
