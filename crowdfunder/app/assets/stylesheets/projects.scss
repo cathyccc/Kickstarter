@@ -16,6 +16,18 @@
   height: 400px;
 }
 
+.main-content {
+  position: relative;
+}
+
+.notice {
+  position: absolute;
+}
+
+.alert{
+  position: absolute;
+}
+
 .project_of_day{
   position: absolute;
   top: 120px;
