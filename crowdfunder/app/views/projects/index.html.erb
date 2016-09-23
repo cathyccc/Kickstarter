@@ -1,7 +1,18 @@
-<h1>All Projects</h1>
-<p>Find me in app/views/projects/index.html.erb</p>
-<% @projects.each do |p| %>
-<h2><%= p.title %></h2>
-<p><%= p.description %></p>
-<p><%= image_tag p.image %></p>
-<% end %>
+<container class = "body_container">
+  <div class = "featured">
+    <div class = "header_img"><%= image_tag Project.last.image %></div>
+    <div class="project_of_day">Project of the Day</div>
+  </div>
+
+  <div class = "list-projects">
+    <% @projects.each do |p| %>
+      <ul class = "list-items">
+        <% if p == @projects.last %>
+        <% else %>
+          <%= p.title %>
+          <li class = "list-image"><%= image_tag p.image %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+</container>

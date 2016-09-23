@@ -1,3 +1,54 @@
 // Place all the styles related to the Projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.header_img img{
+  min-height: 400px;
+  min-width: 900px;
+  width: 100%;
+  margin:auto;
+  position: relative;
+  // border-radius:25px;
+}
+
+.header_img{
+  overflow: hidden;
+  height: 400px;
+}
+
+.project_of_day{
+  position: absolute;
+  top: 120px;
+  background-color: #25CB68;
+  padding: 8px;
+  color: white;
+}
+
+.list-items {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 32%;
+  height: 300px;
+  display: inline-block;
+  padding: 0px;
+}
+
+.list-image {
+  margin: 0;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  filter: brightness(80%);
+  -webkit-filter: brightness(80%);
+  -moz-filter: brightness(80%);
+  -ms-filter: brightness(80%);
+}
+
+.list-projects{
+  text-align: justify;
+}
+
+.list-image img{
+  height: 350px;
+}
