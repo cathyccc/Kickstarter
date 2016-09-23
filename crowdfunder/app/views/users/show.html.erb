@@ -8,7 +8,7 @@
     <h1 class="user-header"> Welcome back!</h1>
     <p class="user-information"><%= @user.email %></p>
 
-<!--  If user doesn't have any backed project suggest and link to index-->
+
     <h1 class="backed-project-header product-text"> Backed projects </h1>
     <div class="backed-projects">
       <% if @user.rewards.empty? %>
@@ -27,7 +27,7 @@
     <% end %>
     <% end %>
 </div>
-<!-- If my project exists run this else suggest a user create one-->
+
     <h1 class="product-text">My Projects</h1>
     <% if @user.owned_projects.empty? %>
     <p class="product-text">You don't have any projects</p>
