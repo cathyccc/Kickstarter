@@ -58,7 +58,7 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:title, :description, :goal, :image, rewards_attributes: [:title, :description, :pledge])
+    params.require(:project).permit(:title, :description, :goal, :image, :end_date, rewards_attributes: [:title, :description, :pledge])
   end
 
   def load_project
