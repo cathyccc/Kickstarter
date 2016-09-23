@@ -34,7 +34,7 @@
     <div class="main-content">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <img class="logo" src="https://www.kickstarter.com/download/kickstarter-logo-light.png" alt="">
+    <%= link_to image_tag("https://www.kickstarter.com/download/kickstarter-logo-light.png", :class => "logo"), root_path %>
     <main><%= yield %></main>
   </div>
   </body>
